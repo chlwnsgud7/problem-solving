@@ -48,7 +48,21 @@ int main() {
     // a*n - b*m = 16
     ll sub = 1;
     for (ll i = 1; i <= 16; i++) sub = sub * i / gcd(sub, i);
-    cout << sub;
-
     
+    int n, m; cin >> n >> m;
+    vvll grid(n, vll(m));
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < m; j++) {
+            cin >> grid[i][j];
+        }
+    }
+
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < m; j++) {
+            ll cur = sub;
+            if ((i+j) % 2) cur += grid[i][j]*grid[i][j]*grid[i][j]*grid[i][j];
+            cout << cur << " ";
+        }
+        cout << "\n";
+    }
 }

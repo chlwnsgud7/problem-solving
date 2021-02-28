@@ -53,9 +53,9 @@
         ],
         "description": "PS 템플릿. 빈 코드에 사용할 것."
     },
-    "convex_hull": {
+    "geometry": {
         "scope": "cpp",
-        "prefix": ["cvxh_sni"],
+        "prefix": ["geo_sni"],
         "body": [
             "#define x first",
             "#define y second",
@@ -105,7 +105,13 @@
             "    ",
             "    return 1;",
             "}",
-            "",
+        ],
+        "description": "기하 스니펫. 전역에 사용할 것."
+    },
+    "convex_hull": {
+        "scope": "cpp",
+        "prefix": ["cvxh_sni"],
+        "body": [
             "vpii convex_hull(vpii points) {",
             "    if (points.size() == 1) return points;",
             "    ",
@@ -141,6 +147,6 @@
             "    return cvxh;",
             "}"
         ],
-        "description": "컨벡스 헐 스니펫. 전역에 사용할 것."
+        "description": "컨벡스 헐 스니펫. geo_sni 사용 후 전역에 사용할 것."
     }
 }
